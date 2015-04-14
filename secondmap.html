@@ -36,7 +36,7 @@
         map = formatMap();
         addButtons();
         setUpListeners(map);
-        map.data.loadGeoJson('https://www.tjhsst.edu/~2015hgaudet/hexagonOne.json');
+        map.data.loadGeoJson('https://tjhsst.edu/~2015hgaudet/hexagonOne.json');
         map.data.setStyle({fillOpacity:'.6',strokeOpacity:'0.3'});
         navigation();
         //document.cookie = 'displayString10='+displayString10+'; expires=Wed, 1 Apr 2-15 12:00:00 UTC';
@@ -49,7 +49,7 @@
           streetViewControl: false,
           mapTypeControl: false,
           maxZoom:19,
-          minZoom:16
+          minZoom:14
         };
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         map.set('styles',[
@@ -194,6 +194,7 @@
         map.data.forEach(function(feature){
           mainId = feature.getId();
           if(mainId < 100){
+            map.data.overrideStyle(map.data.getFeatureById(mainId),{fillOpacity:'0',strokeOpacity:'0'});
             if(google.maps.geometry.spherical.computeDistanceBetween(map.getCenter(),new google.maps.LatLng(feature.getProperty('center')[1], feature.getProperty('center')[0])) < 500){
               var disp = feature.getProperty('displayString')
               //add cookie functionality in here!
