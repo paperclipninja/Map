@@ -107,6 +107,7 @@
       }
       //---------------------------------------------------------------------------------------
       function handleNoGeolocation(errorFlag) {
+        if(!confirm("No location data available. Redirect to home screen?")){
         noNavigationListeners();
         var content;
         if (errorFlag) {
@@ -120,7 +121,10 @@
           position: tj,
           content: content
         };
-        var infowindow = new google.maps.InfoWindow(options);
+        var infowindow = new google.maps.InfoWindow(options); }
+        else{
+          window.location.assign('main.html')
+        }
       }
       //---------------------------------------------------------------------------------------
       function setUpPolylines(map,pos){
