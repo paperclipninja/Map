@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>maaaaaaaap</title>
+    <style>
+    body{background:#9999FF;}
+
+    div{background-color:#99FF99;
+      opacity:1;
+        /*position:absolute;
+        top:0;
+        left:0;
+        width:5000px;
+        height:2500px;*/}
+
+    </style>
+
+  </head>
+  <body>
+     
+    <div id="overlay" onClick="alert('div clicked'")>Hello</div>
+    <script>
+    final int a=0;
+    var div=document.getElementById("overlay");
+;
+    //function changeOpacity()
+    //{
+    //  alert("div clicked");
+     // var thediv=document.getElementById("overlay");
+     //thediv.style.color="red";
+     /* if(a==0)
+      {
+        a=1;
+        thediv.style.opacity=0;
+      }
+      else{
+        a=0;
+        thediv.style.opacity=1;
+      }*/
+
+    }
+    </script>
+
+  </body>
+</html>
