@@ -4,6 +4,22 @@
 		<title>Home Screen</title>
 	</head>
 	<body>
+		<?php 
+			//To add stuff to the database use
+			//$db->exec('INSERT INTO users (username, password, array) VALUES ("paperclipninja","coolPas5$word", [array, array array])');
+			//to retrieve values (you'll probably be more concerned with the array of stuff)
+			//SELECT array FROM users WHERE username='paperclipninja';
+			$db = new SQLite3('userDatabase') or die('Unable to open database');
+			$query = <<<EOD
+			CREATE TABLE IF NOT EXISTS users (username STRING PRIMARY KEY, password STRING, array ARRAY)//could also be arraylist
+			EOD;
+			$db->exec('INSERT INTO users (username,password, array) VALUES("ggalore","potato", [0,1,2,3,4])';)
+			
+			$db->exec($query) or die('Create databse failed');
+			$result=$db->query('SELECT*FROM users') or die('Query Failed');
+		>
+		
+		
 		<p><a href="secondmap.html">Get Started</a></p>
 		<p><a href="help.html">Help!</a>
 		<a href="about.html">About Hexsploration</a></p>
