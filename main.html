@@ -10,7 +10,7 @@
 			//to retrieve values (you'll probably be more concerned with the array of stuff)
 			//SELECT array FROM users WHERE username='paperclipninja';
 			$db = new SQLite3('userDatabase') or die('Unable to open database');
-			$query = <<<EOD
+			$query = <<EOD
 			CREATE TABLE IF NOT EXISTS users (username STRING PRIMARY KEY, password STRING, array ARRAY)//could also be arraylist
 			EOD;
 			$db->exec('INSERT INTO users (username,password, array) VALUES("ggalore","potato", [0,1,2,3,4])';)
