@@ -3,7 +3,7 @@
 	<head>
 		<title>Home Screen</title>
 	</head>
-	<body>
+	<body onload=initialise()>
 		<?php 
 			//To add stuff to the database use
 			//$db->exec('INSERT INTO users (username, password, array) VALUES ("paperclipninja","coolPas5$word", [array, array array])');
@@ -20,8 +20,22 @@
 		>
 		
 		
-		<p><a href="secondmap.html">Get Started</a></p>
+		<p id="map"><a href="secondmap.html">Get Started</a></p>
 		<p><a href="help.html">Help!</a>
 		<a href="about.html">About Hexsploration</a></p>
+		
+		<script>
+		funtion initialise(){
+		window.map=document.getElementById("map");
+		window.map.canvas.addEventListener("ousedown",doMouseUp,false);
+		window.pos=0;
+		}
+		function doMouseUp(event){
+		canvas_x=event.pageX;
+		canvas_y=event.pageY;
+		alert("X=",canvas_x,"y=",canvas_y);
+		}
+		</script>
+		
 	</body>
 </html>
